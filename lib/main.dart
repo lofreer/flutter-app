@@ -1,10 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:demo/navigation/tab_navigation.dart';
 import 'package:demo/util/app_manager.dart';
 
 void main() {
   runApp(MyApp());
+
+  //Flutter沉浸式状态栏
+  if (Platform.isAndroid) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -21,6 +30,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       navigatorKey: Get.key,
+      //去除右上角的Debug标签
+      debugShowCheckedModeBanner: false,
       home: TabNavigation()
     );
   }

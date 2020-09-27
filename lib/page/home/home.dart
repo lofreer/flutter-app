@@ -9,7 +9,7 @@ import 'package:demo/provider/home_page_model.dart';
 import 'package:demo/widget/loading_container.dart';
 import 'package:demo/widget/provider_widget.dart';
 import 'package:demo/widget/rank_widget_item.dart';
-import 'package:demo/util/navigator_manager.dart';
+import 'package:demo/nav_router/manager.dart';
 
 const TEXT_HEADER_TYPE = 'textHeader';
 

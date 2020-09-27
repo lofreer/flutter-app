@@ -5,6 +5,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:provider/provider.dart';
 import 'package:demo/config/string.dart';
 import 'package:demo/model/issue_model.dart';
+import 'package:demo/page/home/video_search_page.dart';
 import 'package:demo/provider/home_page_model.dart';
 import 'package:demo/widget/loading_container.dart';
 import 'package:demo/widget/provider_widget.dart';
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage>
                 color: Colors.black87,
               ),
               onPressed: () {
-                // NavigatorManager.to(VideoSearchPage());
+                NavigatorManager.push(VideoSearchPage());
               }),
         ],
       ),

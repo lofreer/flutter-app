@@ -1,4 +1,5 @@
 import 'package:connectivity/connectivity.dart';
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 
 class ApiService {
@@ -23,6 +24,12 @@ class ApiService {
   static const topics_url = '${base_url}v3/specialTopics';
 
   static const topics_detail_url = '${base_url}v3/lightTopics/internal/';
+
+  static const news_url = '${base_url}v7/information/list?vc=6030000&deviceModel=';
+
+  static const search_url = "${base_url}v1/search?query=";
+
+  static const category_video_url = '${base_url}v4/categories/videoList?';
 
 
   static Dio _dio;
@@ -51,6 +58,20 @@ class ApiService {
         print('Error url:${e.request.uri}');
         return e;
       }));
+
+      (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+        (client) {
+          client.findProxy = (url) {
+            ///设置代理 电脑ip地址
+            // return "PROXY 127.0.0.1:8888";
+
+            ///不设置代理
+            return 'DIRECT';
+          };
+
+          ///忽略证书
+          // client.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+      };
     }
     return _dio;
   }

@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/config/color.dart';
 import 'package:demo/model/news_model.dart';
+import 'package:demo/page/web_page.dart';
+import 'package:demo/page/browser.dart';
 import 'package:demo/nav_router/manager.dart';
 
 class NewsTitleWidgetItem extends StatelessWidget {
@@ -34,7 +36,7 @@ class NewsContentWidgetItem extends StatelessWidget {
           String url = Uri.decodeComponent(newsItemModel.data.actionUrl
               .substring(newsItemModel.data.actionUrl.indexOf("url")));
           url = url.substring(4, url.length);
-          // NavigatorManager.push(WebPage(url: url));
+          NavigatorManager.push(Browser(url: url));
         },
         child: Padding(
             padding: EdgeInsets.all(10),

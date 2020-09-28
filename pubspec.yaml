@@ -39,6 +39,7 @@ dependencies:
   fluttertoast: ^3.1.2
   # 网络图片缓存
   cached_network_image: ^2.0.0-rc
+  extended_image: ^0.9.0
   # 轮播组件
   flutter_swiper: ^1.1.6
   # 状态管理
@@ -49,6 +50,8 @@ dependencies:
   flustars: ^0.2.6+1
   # 分享插件
   share: ^0.6.4+3
+  # 加载更多
+  loading_more_list: ^3.0.0
 
 dev_dependencies:
   flutter_test:

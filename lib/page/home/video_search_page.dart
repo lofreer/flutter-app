@@ -15,24 +15,28 @@ class VideoSearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-            decoration: BoxDecoration(color: Colors.white),
-            child: SafeArea(
-                child: ProviderWidget<VideoSearchModel>(
-                    model: VideoSearchModel(),
-                    onModelInit: (model) => model.getKeyWords(),
-                    builder: (context, model, child) {
-                      return Column(children: <Widget>[
-                        _searchBar(model, context),
-                        Expanded(
-                            flex: 1,
-                            child: Stack(children: <Widget>[
-                              _keyWordWidget(model),
-                              _searchVideoWidget(model),
-                              _emptyWidget(model)
-                            ]))
-                      ]);
-                    }))));
+      body: Container(
+        decoration: BoxDecoration(color: Colors.white),
+        child: SafeArea(
+          child: ProviderWidget<VideoSearchModel>(
+            model: VideoSearchModel(),
+            onModelInit: (model) => model.getKeyWords(),
+            builder: (context, model, child) {
+              return Column(children: <Widget>[
+                _searchBar(model, context),
+                Expanded(
+                    flex: 1,
+                    child: Stack(children: <Widget>[
+                      _keyWordWidget(model),
+                      _searchVideoWidget(model),
+                      _emptyWidget(model)
+                    ]))
+              ]
+            );
+          })
+        )
+      )
+    );
   }
 
   Widget _searchBar(VideoSearchModel model, BuildContext context) {

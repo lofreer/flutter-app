@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:demo/config/string.dart';
 import 'package:demo/model/issue_model.dart';
 import 'package:demo/page/home/video_search_page.dart';
+import 'package:demo/page/home/video_detail_page.dart';
 import 'package:demo/provider/home_page_model.dart';
 import 'package:demo/widget/loading_container.dart';
 import 'package:demo/widget/provider_widget.dart';
@@ -121,8 +122,8 @@ class _HomePageState extends State<HomePage>
                 model.changeBannerIndex(index);
               },
               onTap: (index) {
-                // NavigatorManager.to(
-                //     VideoDetailPage(data: model.bannerList[index].data));
+                NavigatorManager.push(
+                    VideoDetailPage(data: model.bannerList[index].data));
               },
               itemCount: model.bannerList?.length ?? 0,
               pagination: new SwiperPagination(

@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/model/topic_model.dart';
-// import 'package:demo/page/topics_detail_page.dart';
+import 'package:demo/page/discovery/topics_detail_page.dart';
 import 'package:demo/nav_router/manager.dart';
 
 class TopicWidgetItem extends StatelessWidget {
@@ -13,7 +13,7 @@ class TopicWidgetItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () => {
-          // NavigatorManager.to(TopicDetailPage(detailId: itemModel.data.id)),
+          NavigatorManager.push(TopicDetailPage(detailId: itemModel.data.id)),
         },
         child: Column(
           children: <Widget>[

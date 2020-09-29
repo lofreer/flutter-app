@@ -1,7 +1,7 @@
 import 'package:demo/config/string.dart';
 import 'package:demo/provider/watch_history_page_model.dart';
 import 'package:flutter/material.dart';
-// import 'package:demo/page/video_detail_page.dart';
+import 'package:demo/page/home/video_detail_page.dart';
 import 'package:demo/nav_router/manager.dart';
 import 'package:demo/widget/provider_widget.dart';
 import 'package:demo/widget/video_relate_widget_item.dart';
@@ -54,8 +54,8 @@ class _WatchHistoryPageState extends State<WatchHistoryPage> {
                               child: VideoRelateWidgetItem(
                                 data: model.itemList[index],
                                 callBack: () {
-                                  // NavigatorManager.push(VideoDetailPage(
-                                  //     data: model.itemList[index]));
+                                  NavigatorManager.push(VideoDetailPage(
+                                      data: model.itemList[index]));
                                 },
                                 titleColor: Colors.black87,
                                 categoryColor: Colors.black26,

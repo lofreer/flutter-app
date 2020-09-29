@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/model/issue_model.dart';
-// import 'package:demo/page/video_detail_page.dart';
+import 'package:demo/page/home/video_detail_page.dart';
 import 'package:demo/util/date_util.dart';
 import 'package:demo/nav_router/manager.dart';
 
@@ -14,7 +14,7 @@ class FollowWidgetItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () => {
-          // NavigatorManager.to(VideoDetailPage(data: item.data))
+          NavigatorManager.push(VideoDetailPage(data: item.data))
         },
         child: Container(
           padding: EdgeInsets.only(left: 15),

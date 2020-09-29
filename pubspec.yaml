@@ -35,7 +35,7 @@ dependencies:
   dio: ^3.0.7
   # 本地存储
   shared_preferences: ^0.5.4+1
-  # 弹框
+  # 提示弹框
   fluttertoast: ^3.1.2
   # 网络图片缓存
   cached_network_image: ^2.0.0-rc
@@ -60,6 +60,10 @@ dependencies:
   image_picker: ^0.6.7+2
   # 列表侧滑
   flutter_slidable: ^0.5.4
+  # 视频播放插件
+  video_player: ^0.10.11+1
+  # 视频播放器封装
+  chewie: ^0.9.8+1
 
 dev_dependencies:
   flutter_test:

@@ -43,7 +43,7 @@ class _Browser extends State<Browser> {
         backgroundColor: Color(0xccd0d7),
         title: Text(title ?? MString.news_title, style: TextStyle(color: Colors.black),),
         centerTitle: true,
-        leading: IconButton(icon: Icon(Icons.arrow_back, color: Color(0xFF23ADE5),), onPressed: () async {
+        leading: IconButton(icon: Icon(Icons.arrow_back, color: Colors.black,), onPressed: () async {
           if (await _webViewController.canGoBack()) {
             _webViewController.goBack();
           } else {

@@ -54,6 +54,8 @@ dependencies:
   loading_more_list: ^3.0.0
   # webview
   webview_flutter: ^0.3.22+1
+  # 图片预览
+  photo_view: ^0.9.2
 
 dev_dependencies:
   flutter_test:

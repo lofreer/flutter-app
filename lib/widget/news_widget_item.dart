@@ -36,7 +36,7 @@ class NewsContentWidgetItem extends StatelessWidget {
           String url = Uri.decodeComponent(newsItemModel.data.actionUrl
               .substring(newsItemModel.data.actionUrl.indexOf("url")));
           url = url.substring(4, url.length);
-          NavigatorManager.push(Browser(url: 'https://h5.koudaikaoyan.com'));
+          NavigatorManager.push(Browser(url: url));
         },
         child: Padding(
             padding: EdgeInsets.all(10),
@@ -52,12 +52,12 @@ class NewsContentWidgetItem extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(bottom: 10),
                         child: CachedNetworkImage(
-                            width: MediaQuery.of(context).size.width,
-                            height: 140,
-                            imageUrl: newsItemModel.data.backgroundImage,
-                            errorWidget: (context, url, error) =>
-                                Image.asset('images/img_load_fail.png'),
-                            fit: BoxFit.fill),
+                          width: MediaQuery.of(context).size.width,
+                          height: 140,
+                          imageUrl: newsItemModel.data.backgroundImage,
+                          errorWidget: (context, url, error) =>
+                            Image.asset('images/img_load_fail.png'),
+                          fit: BoxFit.fill),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,9 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:demo/page/discovery/recommend_photo_gallery_page.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/model/recommend_model.dart';
-// import 'package:demo/page/discovery/recommend_photo_gallery_page.dart';
-// import 'package:demo/page/discovery/recommend_video_play_page.dart';
 import 'package:demo/nav_router/manager.dart';
 
 const VIDEO_TYPE = 'video';
@@ -20,9 +19,9 @@ class RecommendWidgetItem extends StatelessWidget {
         if (item.data.content.type == VIDEO_TYPE) {
           // NavigatorManager.to(RecommendVideoPlayPage(item: item));
         } else {
-          // NavigatorManager.to(RecommendPhotoGalleryPage(
-          //   galleryItems: item.data.content.data.urls,
-          // ));
+          NavigatorManager.push(RecommendPhotoGalleryPage(
+            galleryItems: item.data.content.data.urls,
+          ));
         }
       },
       child: Card(

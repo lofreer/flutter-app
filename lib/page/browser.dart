@@ -5,16 +5,18 @@ import 'package:demo/nav_router/manager.dart';
 
 class Browser extends StatefulWidget {
 
-  const Browser({Key key, this.url, this.title}) : super(key: key);
+  const Browser({Key key, this.url}) : super(key: key);
 
   final String url;
-  final String title;
 
   @override
   _Browser createState() => _Browser();
 }
 
 class _Browser extends State<Browser> {
+  WebViewController _controller;
+  String title;
+
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,20 @@ class _Browser extends State<Browser> {
       body: WebView(
         initialUrl: widget.url,
         javascriptMode: JavascriptMode.unrestricted,
+        onWebViewCreated: (controller) {
+          _controller = controller;
+        },
+        onPageFinished: (url) => {
+            _controller.evaluateJavascript("document.title").then((result){
+              setState(() {
+                title = result;
+              });
+            }
+          )
+        },
+        onPageStarted: (url) => {
+          print('url: '+url)
+        },
       ),
     );
   }
@@ -31,10 +47,14 @@ class _Browser extends State<Browser> {
     return AppBar(
         elevation: 0,
         backgroundColor: Color(0xccd0d7),
-        title: Text(widget.title ?? MString.news_title, style: TextStyle(color: Colors.black),),
+        title: Text(title ?? MString.news_title, style: TextStyle(color: Colors.black),),
         centerTitle: true,
-        leading: IconButton(icon: Icon(Icons.arrow_back, color: Color(0xFF23ADE5),), onPressed: () {
-          NavigatorManager.pop();
+        leading: IconButton(icon: Icon(Icons.arrow_back, color: Color(0xFF23ADE5),), onPressed: () async {
+          if (await _controller.canGoBack()) {
+            _controller.goBack();
+          } else {
+            NavigatorManager.pop();
+          }
         })
     );
   }

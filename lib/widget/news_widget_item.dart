@@ -36,7 +36,7 @@ class NewsContentWidgetItem extends StatelessWidget {
           String url = Uri.decodeComponent(newsItemModel.data.actionUrl
               .substring(newsItemModel.data.actionUrl.indexOf("url")));
           url = url.substring(4, url.length);
-          NavigatorManager.push(Browser(url: url));
+          NavigatorManager.push(Browser(url: 'https://h5.koudaikaoyan.com'));
         },
         child: Padding(
             padding: EdgeInsets.all(10),

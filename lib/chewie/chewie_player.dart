@@ -5,8 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:demo/chewie/chewie_progress_colors.dart';
 import 'package:demo/chewie/player_with_controls.dart';
+import 'package:orientation/orientation.dart';
 import 'package:wakelock/wakelock.dart';
 import 'package:video_player/video_player.dart';
+import 'package:auto_orientation/auto_orientation.dart';
 
 typedef Widget ChewieRoutePageBuilder(
     BuildContext context,
@@ -61,9 +63,15 @@ class ChewieState extends State<Chewie> {
     if (widget.controller.isFullScreen && !_isFullScreen) {
       _isFullScreen = true;
       await _pushFullScreenWidget(context);
+      // 全屏
+      // AutoOrientation.landscapeAutoMode();
+      // OrientationPlugin.forceOrientation(DeviceOrientation.landscapeRight);
     } else if (_isFullScreen) {
       Navigator.of(context).pop();
       _isFullScreen = false;
+      // 竖屏
+      // AutoOrientation.portraitAutoMode();
+      // OrientationPlugin.forceOrientation(DeviceOrientation.portraitUp);
     }
   }
 
@@ -140,6 +148,7 @@ class ChewieState extends State<Chewie> {
     }
 
     await Navigator.of(context).push(route);
+
     _isFullScreen = false;
     widget.controller.exitFullScreen();
 

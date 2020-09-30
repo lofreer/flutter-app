@@ -8,6 +8,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.4.2"
+  auto_orientation:
+    dependency: "direct main"
+    description:
+      name: auto_orientation
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.6"
   boolean_selector:
     dependency: transitive
     description:
@@ -331,6 +338,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.3.0"
+  orientation:
+    dependency: "direct main"
+    description:
+      name: orientation
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.2.0"
   path:
     dependency: transitive
     description:

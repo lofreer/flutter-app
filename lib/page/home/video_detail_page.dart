@@ -67,13 +67,14 @@ class _VideoDetailPageState extends State<VideoDetailPage>
         builder: (context, model, child) {
           return AnnotatedRegion<SystemUiOverlayStyle>(
               child: Scaffold(
-                  body: Column(children: <Widget>[
+                body: Column(children: <Widget>[
                 Hero(
-                    //Hero动画
-                    tag: '${widget.data.id}${widget.data.time}',
-                    child: Chewie(
-                      controller: _cheWieController,
-                    )),
+                  //Hero动画
+                  tag: '${widget.data.id}${widget.data.time}',
+                  child: Chewie(
+                    controller: _cheWieController,
+                  )
+                ),
                 Expanded(
                     flex: 1,
                     child: LoadingContainer(

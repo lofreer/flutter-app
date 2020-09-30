@@ -66,6 +66,9 @@ dependencies:
   # chewie: ^0.9.8+1
   # 屏幕唤醒 chewie内部使用
   wakelock: ">=0.1.2 <0.2.0"
+  # 屏幕翻转
+  auto_orientation: ^1.0.5
+  orientation: ">=1.2.0"
   # 视频播放相关的icon图标 chewie内部使用
   open_iconic_flutter: ">=0.3.0 <0.4.0"
 

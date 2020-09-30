@@ -63,7 +63,11 @@ dependencies:
   # 视频播放插件
   video_player: ^0.10.11+1
   # 视频播放器封装
-  chewie: ^0.9.8+1
+  # chewie: ^0.9.8+1
+  # 屏幕唤醒 chewie内部使用
+  wakelock: ">=0.1.2 <0.2.0"
+  # 视频播放相关的icon图标 chewie内部使用
+  open_iconic_flutter: ">=0.3.0 <0.4.0"
 
 dev_dependencies:
   flutter_test:

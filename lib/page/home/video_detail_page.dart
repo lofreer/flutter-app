@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:chewie/chewie.dart';
-// import 'package:demo/chewie/chewie_player.dart';
+// import 'package:chewie/chewie.dart';
+import 'package:demo/chewie/chewie_player.dart';
 import 'package:demo/config/string.dart';
 import 'package:demo/model/issue_model.dart';
 import 'package:demo/provider/video_detail_page_model.dart';

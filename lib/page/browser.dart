@@ -22,9 +22,10 @@ class _Browser extends State<Browser> {
   String title;
 
   JavascriptChannel jsBridge(BuildContext context) => JavascriptChannel(
-    name: 'jsbridge', // 与h5 端的一致 不然收不到消息
+    name: 'JsBridge', // 与h5 端的一致 不然收不到消息
     onMessageReceived: (JavascriptMessage message) async{
       debugPrint(message.message);
+      _webViewController.evaluateJavascript('test("555,666")');
     }
   );
 
